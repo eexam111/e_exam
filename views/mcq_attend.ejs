@@ -1,14 +1,28 @@
-
 <div class="container">
+    <div id="timer" class="timer-section">Time Remaining: <span id="countdown">10:00</span></div>
     <h2 class="mcq-heading">MCQ Test</h2>
     <form id="mcqForm" action="/mcqattend/<%= mcqTest._id %>/submit" method="POST" class="mcq-form">
       <% mcqTest.questions.forEach((question, index) => { %>
           <div class="question">
-              <p><%= index + 1 %>. <%= question.question %></p>
-              <% question.options.forEach((option, optionIndex) => { %>
-                  <input type="radio" id="option<%= index %><%= optionIndex %>" name="answer<%= index %>" value="<%= option %>" class="mcq-option">
-                  <label for="option<%= index %><%= optionIndex %>" class="mcq-option-label"><%= option %></label><br>
-              <% }) %>
+              <p class="question-text"><%= index + 1 %>. <%= question.question %></p>
+              <div class="options">
+                  <div class="option-group">
+                      <% question.options.slice(0, 2).forEach((option, optionIndex) => { %>
+                          <div class="option">
+                              <input type="radio" id="option<%= index %><%= optionIndex %>" name="answer<%= index %>" value="<%= option %>" class="mcq-option">
+                              <label for="option<%= index %><%= optionIndex %>" class="mcq-option-label"><%= option %></label>
+                          </div>
+                      <% }) %>
+                  </div>
+                  <div class="option-group">
+                      <% question.options.slice(2).forEach((option, optionIndex) => { %>
+                          <div class="option">
+                              <input type="radio" id="option<%= index %><%= optionIndex + 2 %>" name="answer<%= index %>" value="<%= option %>" class="mcq-option">
+                              <label for="option<%= index %><%= optionIndex + 2 %>" class="mcq-option-label"><%= option %></label>
+                          </div>
+                      <% }) %>
+                  </div>
+              </div>
           </div>
       <% }) %>
       <input type="hidden" name="testId" value="<%= mcqTest._id %>">
@@ -16,11 +30,7 @@
   
       <button type="submit" class="submit-btn">Submit Test</button>
     </form>
-  
-    <div id="timer" class="timer-section">Time Remaining: <span id="countdown">10:00</span></div>
-  </div>
-  
-
+</div>
 
 <script>
     var countdownEl = document.getElementById('countdown');
@@ -40,5 +50,18 @@
         }
     }
     var timer = setInterval(updateCountdown, 1000);
-  </script>
-  
+
+    $('.option').click(function() {
+    // Remove the 'selected' class from all options
+    $('.option').removeClass('selected');
+    
+    // Add the 'selected' class to the clicked option
+    $(this).addClass('selected');
+    
+    // Find the radio button inside the clicked option and select it
+    $(this).find('.mcq-option').prop('checked', true);
+});
+
+
+
+</script>
