@@ -1,27 +1,18 @@
-<!-- schedule.ejs -->
-<form action="/schedule" method="POST">
-    <label for="time">Time:</label>
-    <input type="text" id="time" name="time" placeholder="Enter time"><br><br>
-    <label for="notes">Notes:</label><br>
-    <textarea id="notes" name="notes" rows="4" cols="50" placeholder="Enter notes"></textarea><br><br>
-    <input type="submit" value="Save">
-</form>
-
-<!-- Delete button form -->
-<form id="deleteScheduleForm" action="/schedule" method="POST">
-    <!-- Add a hidden input field to specify the request method as DELETE -->
-    <input type="hidden" name="_method" value="DELETE">
-    <!-- Add a button to trigger the deletion -->
-    <button type="submit">Delete All</button>
-</form>
-
-
+<div class="schedule-page">
+    <form id="scheduleForm" action="/schedule" method="POST">
+        <label for="time">Time:</label>
+        <input required type="text" id="time" name="time" placeholder="Enter time"><br><br>
+        <label for="notes">Notes:</label><br>
+        <textarea required id="notes" name="notes" rows="4" cols="50" placeholder="Enter notes"></textarea><br><br>
+        <input type="submit" value="Save">
+        <button id="deleteScheduleBtn" type="button">Delete All</button>
+        <input type="hidden" name="_method" value="DELETE">
+    </form>
+</div>
 
 <!-- JavaScript code for delete button -->
 <script>
-    document.getElementById('deleteScheduleForm').addEventListener('submit', async (event) => {
-        event.preventDefault(); // Prevent the default form submission
-        
+    document.getElementById('deleteScheduleBtn').addEventListener('click', async () => {
         try {
             const response = await fetch('/schedule', {
                 method: 'DELETE',
@@ -30,7 +21,7 @@
                 },
                 body: JSON.stringify({}) // You can pass data if needed
             });
-    
+
             if (response.ok) {
                 // Schedule data deleted successfully
                 console.log('Schedule data deleted successfully');
@@ -43,4 +34,11 @@
             console.error('Error deleting schedule data:', error.message);
         }
     });
-    </script>
+
+    document.getElementById('scheduleForm').addEventListener('submit', (event) => {
+        // Prevent the form from submitting if the "Delete All" button was clicked
+        if (document.activeElement.id === 'deleteScheduleBtn') {
+            event.preventDefault();
+        }
+    });
+</script>

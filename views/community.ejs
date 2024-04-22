@@ -1,13 +1,10 @@
-<div class="welcome-section">
-    <div class="welcome-message">
-        <h1>Welcome to our Community</h1>
-    </div>
-</div>
-<div id="messages"></div>
+
+<div class="chat-container"><div id="messages"></div>
 <form id="messageForm">
     <input type="text" id="messageInput" placeholder="Type your message">
     <button type="submit">Send</button>
-</form>
+</form></div>
+
 
 
 <script src="/socket.io/socket.io.js"></script>
@@ -28,17 +25,22 @@
         });
 
         socket.on('chat message', (data) => {
-            const { username, message } = data;
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('chat-message');
-            if (username === 'You') {
-                messageElement.classList.add('user-message');
-                messageElement.innerHTML = `<span class="username">${username}:</span> ${message}`;
-            } else {
-                messageElement.textContent = `${username}: ${message}`;
-            }
-            messages.appendChild(messageElement);
-            messages.scrollTop = messages.scrollHeight; 
-        });
+    const { username, message } = data;
+    const currentUser = '<%= user %>'; // Get the current user's username from the session
+
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('chat-message');
+
+    if (username === currentUser) {
+        messageElement.classList.add('user-message');
+        messageElement.innerHTML = `<span class="username"><strong>${username}:</strong></span> ${message}`;
+    } else {
+        messageElement.textContent = `${username}: ${message}`;
+    }
+
+    messages.appendChild(messageElement);
+    messages.scrollTop = messages.scrollHeight; 
+});
+
     });
 </script>

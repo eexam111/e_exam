@@ -30,11 +30,14 @@ exports.studash = async (req, res) => {
  * Community
  */
 exports.community = async (req, res) => {
+  const userName = req.session.username;
   const locals = {
     title: "Community - E-Exam",
     description: "Exam Arrangement System",
+    layout:'../views/layouts/student_dashboard',
+    user: userName 
   }
-  res.render('community', {locals,layout:'../views/layouts/student_dashboard'});
+  res.render('community',locals);
 };
 /**
  * GET /
