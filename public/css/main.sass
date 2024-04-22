@@ -1,0 +1,191 @@
+// Variables
+$primary-color: #81d4f4  // Cerulean Blue
+$background-color: #ecf0f1  // Light Gray
+$text-color: #2c3e50  // Dark Blue
+$dark-background: #34495e  // Dark Blue Gray
+$secondary-color: #0288d1 // New Color
+// Global Styles
+html
+    position: relative
+    min-height: 100%
+    box-sizing: border-box // Add box-sizing property to the html element
+
+body
+    font-family: 'Roboto', sans-serif
+    margin: 0
+    padding-bottom: 100px
+    background-image: linear-gradient(to bottom, $background-color, $primary-color) // Light Lemon to Sky Blue gradient
+    background-size: cover
+    color: #000 // Black text color for better readability
+    overflow-x: hidden // Prevent horizontal scrolling
+    box-sizing: inherit // Inherit box-sizing property from the html element
+
+    // Add padding to the bottom of the body to prevent content from being obscured by the fixed footer
+    padding-bottom: 100px
+
+    // Apply box-sizing to all elements within the body
+    * 
+        box-sizing: border-box
+// Header Styles
+.header
+  background-color: $dark-background
+  color: #fff
+  padding: 10px
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.logo
+  img
+    width: 70px
+    height: 70px
+    border-radius: 50%
+
+.header-nav
+  .header-ul
+    list-style: none
+    margin: 0
+    padding: 0
+    display: flex
+    align-items: center
+
+  .header-ul li
+    margin-right: 20px
+    position: relative
+    border: none
+    border-radius: 5px
+
+  .header-ul li:last-child
+    margin-right: 0
+
+  .header-ul li a
+    color: #fff
+    text-decoration: none
+    font-weight: bold
+    transition: color 0.5s
+
+  .header-ul li a:hover
+    color: $primary-color
+
+// Footer Styles
+.footer
+  background-color: $dark-background
+  color: #fff
+  padding: 20px
+  text-align: center
+  position: absolute
+  bottom: 0
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.footer-content
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.icons
+  list-style: none
+  display: flex
+  margin: 0
+  padding: 0
+  max-width: 200px  // Set a maximum width for the icons container
+
+.icons li
+  margin-right: 10px
+
+.icons li:last-child
+  margin-right: 0
+
+.icons li a img
+  width: 30px
+  height: 30px
+  border-radius: 50%
+  transition: transform 0.3s
+
+.icons li a img:hover
+  transform: scale(1.2)
+
+.footer p
+  margin: 0
+
+.footer p a
+  color: #fff
+  text-decoration: none
+  font-weight: bold
+  transition: color 0.5s
+
+.footer p a:hover
+  color: $primary-color
+
+// Home Page Styles
+.section
+  padding: 100px 0
+  text-align: center
+
+.message
+  max-width: 800px
+  margin: 0 auto
+  background-color: $secondary-color
+  padding: 20px
+  border-radius: 10px
+
+.message h1
+  font-size: 36px
+  margin-bottom: 20px
+  color: #fff
+
+.slogan
+  font-size: 24px
+  color: #fff
+
+.main-content
+  padding: 40px 0
+
+.review-slider
+  display: flex
+  justify-content: center
+  align-items: center
+  overflow: hidden
+  margin-top: 20px
+
+.review-slide
+  flex: 0 0 auto
+  width: 300px
+  margin: 0 10px
+  opacity: 0
+  transition: opacity 0.5s ease
+
+.review-slide.active
+  opacity: 1
+
+.review-content
+  background-color: $dark-background
+  padding: 20px
+  border-radius: 10px
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
+  text-align: center
+  color: #fff
+
+.review-content img
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  margin-bottom: 10px
+
+// Animation
+.animated
+  animation-duration: 1s
+  animation-fill-mode: both
+
+.fadeIn
+  animation-name: fadeIn
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+    transform: translateY(50px)
+  100%
+    opacity: 1
+    transform: translateY(0)

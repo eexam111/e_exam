@@ -1,0 +1,12 @@
+<!-- student_mcq.ejs -->
+
+<div class="container">
+    <h2>Available MCQ Tests</h2>
+    <ul class="mcq-tests-list">
+        <% mcqTests.forEach((mcqTest) => { %>
+            <li>
+                <a href="/mcqattend/<%= mcqTest._id %>" class="test-link"><%= mcqTest.name %></a>
+            </li>
+        <% }) %>
+    </ul>
+</div>

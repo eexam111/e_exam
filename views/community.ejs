@@ -1,0 +1,44 @@
+<div class="welcome-section">
+    <div class="welcome-message">
+        <h1>Welcome to our Community</h1>
+    </div>
+</div>
+<div id="messages"></div>
+<form id="messageForm">
+    <input type="text" id="messageInput" placeholder="Type your message">
+    <button type="submit">Send</button>
+</form>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const socket = io();
+        const messages = document.getElementById('messages');
+        const messageForm = document.getElementById('messageForm');
+        const messageInput = document.getElementById('messageInput');
+
+        messageForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const message = messageInput.value.trim();
+            if (message !== '') {
+                socket.emit('chat message', message);
+                messageInput.value = '';
+            }
+        });
+
+        socket.on('chat message', (data) => {
+            const { username, message } = data;
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message');
+            if (username === 'You') {
+                messageElement.classList.add('user-message');
+                messageElement.innerHTML = `<span class="username">${username}:</span> ${message}`;
+            } else {
+                messageElement.textContent = `${username}: ${message}`;
+            }
+            messages.appendChild(messageElement);
+            messages.scrollTop = messages.scrollHeight; 
+        });
+    });
+</script>

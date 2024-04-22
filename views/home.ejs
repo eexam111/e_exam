@@ -1,0 +1,84 @@
+
+
+<!-- Welcome Section -->
+<div class="welcome-section">
+    <div class="welcome-message animated fadeIn">
+        <h1>Welcome to our System</h1>
+        <p class="slogan">Empowering students to succeed in exams!</p>
+    </div>
+</div>
+
+
+<!-- Student Reviews Section -->
+<div class="main-content animated fadeIn">
+    <h2>Student Reviews</h2>
+    <div class="review-slider">
+        <div class="review-slide active ">
+            <div class="review-content">
+                <div class="review-details">
+                    <img src="img/person1.jpg" alt="Person Icon">
+                    <div class="review-info">
+                        <p class="reviewer-name">John Doe</p>
+                        <p class="review-text">"This system helped me ace my exams! Highly recommended!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="review-slide">
+            <div class="review-content">
+                <div class="review-details">
+                    <img src="img/person2.jpg" alt="Person Icon">
+                    <div class="review-info">
+                        <p class="reviewer-name">Jane Smith</p>
+                        <p class="review-text">"Amazing platform for managing exams efficiently."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="review-slide">
+            <div class="review-content">
+                <div class="review-details">
+                    <img src="img/person3.jpg" alt="Person Icon">
+                    <div class="review-info">
+                        <p class="reviewer-name">David Johnson</p>
+                        <p class="review-text">"User-friendly interface and great features."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- JavaScript for mouse events -->
+ <script>
+    // Add mouse event for menu links
+    const menuLinks = document.querySelectorAll('.menu-link');
+    menuLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#444'; // Darker background on hover
+        });
+        link.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = ''; // Restore original background color
+        });
+    });
+</script>
+<!-- JavaScript for review slider -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const reviewSlides = document.querySelectorAll('.review-slide');
+        let currentSlide = 0;
+
+        function showSlide(slideIndex) {
+            reviewSlides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            reviewSlides[slideIndex].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % reviewSlides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 3000); // Automatically switch slides every 3 seconds
+    });
+</script>

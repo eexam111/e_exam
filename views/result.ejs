@@ -1,0 +1,32 @@
+<!-- result.ejs -->
+
+<div class="container">
+    <h2>All Results</h2>
+    <% if (results.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Test ID</th>
+            <th>User Name</th>
+            <th>Correct Answers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% results.forEach((result) => { %>
+            <tr>
+              <td><%= result.testId %></td>
+              <td><%= result.userName %></td>
+              <td><%= result.correctAnswers %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No results found</p>
+    <% } %>
+  </div>
+  
+  <form action="/delete_results" method="post">
+    <button type="submit">Delete All</button>
+  </form>
+  

@@ -1,0 +1,46 @@
+<!-- schedule.ejs -->
+<form action="/schedule" method="POST">
+    <label for="time">Time:</label>
+    <input type="text" id="time" name="time" placeholder="Enter time"><br><br>
+    <label for="notes">Notes:</label><br>
+    <textarea id="notes" name="notes" rows="4" cols="50" placeholder="Enter notes"></textarea><br><br>
+    <input type="submit" value="Save">
+</form>
+
+<!-- Delete button form -->
+<form id="deleteScheduleForm" action="/schedule" method="POST">
+    <!-- Add a hidden input field to specify the request method as DELETE -->
+    <input type="hidden" name="_method" value="DELETE">
+    <!-- Add a button to trigger the deletion -->
+    <button type="submit">Delete All</button>
+</form>
+
+
+
+<!-- JavaScript code for delete button -->
+<script>
+    document.getElementById('deleteScheduleForm').addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent the default form submission
+        
+        try {
+            const response = await fetch('/schedule', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({}) // You can pass data if needed
+            });
+    
+            if (response.ok) {
+                // Schedule data deleted successfully
+                console.log('Schedule data deleted successfully');
+                // Optionally, you can reload the page or update the UI
+            } else {
+                // Error deleting schedule data
+                console.error('Error deleting schedule data:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error deleting schedule data:', error.message);
+        }
+    });
+    </script>

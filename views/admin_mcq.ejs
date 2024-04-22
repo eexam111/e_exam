@@ -1,0 +1,34 @@
+
+<form action="/admin/mcq" method="POST">
+    <label for="testName">Test Name:</label>
+    <input type="text" id="testName" name="testName" placeholder="Enter test name"><br><br>
+
+    <% for(let i = 1; i <= 10; i++) { %>
+        <div class="question">
+            <label for="question<%= i %>">Question <%= i %>:</label><br>
+            <textarea id="question<%= i %>" name="question[]" rows="4" cols="50" placeholder="Enter your question"></textarea><br><br>
+
+            <label for="option<%= i %>_1">Option 1:</label>
+            <input type="text" id="option<%= i %>_1" name="option[]" placeholder="Option 1"><br>
+
+            <label for="option<%= i %>_2">Option 2:</label>
+            <input type="text" id="option<%= i %>_2" name="option[]" placeholder="Option 2"><br>
+
+            <label for="option<%= i %>_3">Option 3:</label>
+            <input type="text" id="option<%= i %>_3" name="option[]" placeholder="Option 3"><br>
+
+            <label for="option<%= i %>_4">Option 4:</label>
+            <input type="text" id="option<%= i %>_4" name="option[]" placeholder="Option 4"><br><br>
+
+            <label for="correctAnswer<%= i %>">Correct Answer:</label>
+            <select id="correctAnswer<%= i %>" name="correctAnswer[]">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                <option value="option4">Option 4</option>
+            </select><br><br>
+        </div>
+    <% } %>
+    
+    <input type="submit" value="Submit">
+</form>

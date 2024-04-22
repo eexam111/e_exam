@@ -1,0 +1,41 @@
+<main>
+    <section class="notice-board">
+        <h2>Notice Board</h2>
+        <div id="notice-container">
+            <!-- Notice items will be dynamically loaded here using JavaScript -->
+        </div>
+    </section>
+
+        <section class="schedule">
+            <h2>Schedule</h2>
+            <div class="schedule-items">
+                <% if (locals.scheduleData && locals.scheduleData.length > 0) { %>
+                    <% locals.scheduleData.forEach(scheduleItem => { %>
+                        <div class="schedule-item">
+                            <h3><%= scheduleItem.time %></h3>
+                            <p><%= scheduleItem.notes %></p>
+                            <!-- Add more details as needed -->
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No schedule data available.</p>
+                <% } %>
+            </div>
+        </section>
+    
+    <section class="community">
+        <h2>Community</h2>
+        <div class="chat-box">
+            <div class="chat-header">
+                Community Chat
+            </div>
+            <div class="chat-messages">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button id="send-message-btn">Send</button> <!-- Use JavaScript to handle sending message -->
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,24 @@
+<!-- HTML form -->
+<form action="/send_request" method="POST">
+    <label for="question">Ask your question:</label><br>
+    <textarea id="question" name="question" rows="4" cols="50"></textarea><br>
+    <button type="submit">Send Request</button>
+</form>
+
+<!-- Display box for admin response and status -->
+<div id="displayBox">
+    <% requests.forEach(request => { %>
+        <div class="response-container">
+            <h2>Question:</h2>
+            <div><%= request.question %></div>
+            <h2>Admin Response:</h2>
+            <div><%= request.adminResponse %></div>
+            <h2>Status:</h2>
+            <div><%= request.status %></div>
+        </div>
+    <% }) %>
+</div>
+
+
+
+

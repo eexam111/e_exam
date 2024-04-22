@@ -1,0 +1,19 @@
+<h1>Admin Guide</h1>
+<% if (requests.length > 0) { %>
+    <ul>
+        <% requests.forEach(request => { %>
+            <li>
+                <strong>Username:</strong> <%= request.userName %><br>
+                <strong>Request:</strong> <%= request.question %>
+                <form action="/process_request/<%= request._id %>/accept" method="POST">
+                    <button type="submit">Accept</button>
+                </form>
+                <form action="/process_request/<%= request._id %>/reject" method="POST">
+                    <button type="submit">Reject</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+<% } else { %>
+    <p>No pending requests</p>
+<% } %>
