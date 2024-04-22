@@ -39,3 +39,43 @@
         </div>
     </section>
 </main>
+<script>
+    // Dynamically load notice board items
+window.addEventListener('DOMContentLoaded', () => {
+    const noticeContainer = document.getElementById('notice-container');
+    const noticeData = [
+        { id: 1, content: 'Notice 1' },
+        { id: 2, content: 'Notice 2' },
+        { id: 3, content: 'Notice 3' }
+        // Add more notice items as needed
+    ];
+
+    noticeData.forEach(noticeItem => {
+        const noticeElement = document.createElement('div');
+        noticeElement.classList.add('notice-item');
+        noticeElement.innerHTML = `
+            <p>${noticeItem.content}</p>
+        `;
+        noticeContainer.appendChild(noticeElement);
+    });
+});
+
+// Handle sending chat messages
+const chatMessages = document.querySelector('.chat-messages');
+const chatInput = document.querySelector('.chat-input input');
+const sendMessageBtn = document.getElementById('send-message-btn');
+
+sendMessageBtn.addEventListener('click', () => {
+    const message = chatInput.value.trim();
+    if (message !== '') {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message');
+        messageElement.innerHTML = `
+            <p>${message}</p>
+        `;
+        chatMessages.appendChild(messageElement);
+        chatInput.value = '';
+    }
+});
+
+</script>

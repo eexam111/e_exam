@@ -1,0 +1,14 @@
+<h1>Admin Signup Payment</h1>
+    <p>Please complete the payment process to proceed with the signup.</p>
+    
+    <!-- Payment Form -->
+    <form action="/process_payment" method="POST">
+        <!-- Payment fields go here -->
+        <label for="card_number">Card Number:</label>
+        <input type="text" id="card_number" name="card_number" required><br><br>
+        <label for="expiry_date">Expiry Date:</label>
+        <input type="text" id="expiry_date" name="expiry_date" required><br><br>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required><br><br>
+        <input type="submit" value="Pay Now">
+    </form>
