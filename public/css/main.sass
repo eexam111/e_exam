@@ -3,7 +3,7 @@ $primary-color: #81d4f4  // Cerulean Blue
 $background-color: #ecf0f1  // Light Gray
 $text-color: #2c3e50  // Dark Blue
 $dark-background: #34495e  // Dark Blue Gray
-$secondary-color: #0288d1 // New Color
+$secondary-color: #0288d1 // Pacific blue
 // Global Styles
 html
     position: relative
@@ -69,123 +69,236 @@ body
 
 // Footer Styles
 .footer
-  background-color: $dark-background
-  color: #fff
-  padding: 20px
-  text-align: center
-  position: absolute
-  bottom: 0
-  width: 100%
-  display: flex
-  justify-content: space-between
-  align-items: center
+    background-color: $dark-background
+    color: #fff
+    padding: 20px
+    text-align: center
+    position: absolute  
+    bottom: 0
+    width: 100%
+    margin-top: 50px 
+    display: flex
+    justify-content: space-between
+    align-items: center
+
 
 .footer-content
-  display: flex
-  justify-content: space-between
-  align-items: center
+    display: flex
+    justify-content: center
+    align-items: center
 
 .icons
-  list-style: none
-  display: flex
-  margin: 0
-  padding: 0
-  max-width: 200px  // Set a maximum width for the icons container
+    list-style: none
+    display: flex
+    margin: 0
+    padding: 0
+    max-width: 200px  // Set a maximum width for the icons container
 
 .icons li
-  margin-right: 10px
+    margin-right: 10px
 
 .icons li:last-child
-  margin-right: 0
+    margin-right: 0
 
 .icons li a img
-  width: 30px
-  height: 30px
-  border-radius: 50%
-  transition: transform 0.3s
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    transition: transform 0.3s
 
 .icons li a img:hover
-  transform: scale(1.2)
+    transform: scale(1.2)
 
 .footer p
-  margin: 0
+    margin: 0
 
 .footer p a
-  color: #fff
-  text-decoration: none
-  font-weight: bold
-  transition: color 0.5s
+    color: #fff
+    text-decoration: none
+    font-weight: bold
+    transition: color 0.5s
 
 .footer p a:hover
-  color: $primary-color
+    color: $primary-color
 
 // Home Page Styles
 .section
-  padding: 100px 0
-  text-align: center
+    padding: 100px 0
+    text-align: center
 
 .message
-  max-width: 800px
-  margin: 0 auto
-  background-color: $secondary-color
-  padding: 20px
-  border-radius: 10px
+    max-width: 800px
+    margin: 0 auto
+    background-color: $secondary-color
+    padding: 20px
+    border-radius: 10px
 
 .message h1
-  font-size: 36px
-  margin-bottom: 20px
-  color: #fff
+    font-size: 36px
+    margin-bottom: 20px
+    color: #fff
 
 .slogan
-  font-size: 24px
-  color: #fff
+    font-size: 24px
+    color: #fff
 
 .main-content
-  padding: 40px 0
+    display: flex
+    flex-direction: column
+    align-items: center 
+    text-align: center 
+    padding: 40px 0
 
 .review-slider
-  display: flex
-  justify-content: center
-  align-items: center
-  overflow: hidden
-  margin-top: 20px
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    margin-top: 20px
 
 .review-slide
-  flex: 0 0 auto
-  width: 300px
-  margin: 0 10px
-  opacity: 0
-  transition: opacity 0.5s ease
+    flex: 0 0 auto
+    width: 300px
+    margin: 0 10px
+    opacity: 0
+    transition: opacity 0.5s ease
 
 .review-slide.active
-  opacity: 1
+    opacity: 1
 
 .review-content
-  background-color: $dark-background
-  padding: 20px
-  border-radius: 10px
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
-  text-align: center
-  color: #fff
+    background-color: $dark-background
+    padding: 20px
+    border-radius: 10px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
+    text-align: center
+    color: #fff
 
 .review-content img
-  width: 50px
-  height: 50px
-  border-radius: 50%
-  margin-bottom: 10px
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    margin-bottom: 10px
 
 // Animation
 .animated
-  animation-duration: 1s
-  animation-fill-mode: both
+    animation-duration: 1s
+    animation-fill-mode: both
 
 .fadeIn
-  animation-name: fadeIn
+    animation-name: fadeIn
 
 @keyframes fadeIn
-  0%
-    opacity: 0
-    transform: translateY(50px)
-  100%
-    opacity: 1
-    transform: translateY(0)
+    0%
+        opacity: 0
+        transform: translateY(50px)
+    100%
+        opacity: 1
+        transform: translateY(0)
+// Signup Page Styles
+.signup-container
+    width: 400px
+    padding: 20px
+    background-color: rgba(255, 255, 255, 0.8) // White background with opacity
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1) // Shadow effect
+    margin: 0 auto // Center the container horizontally
+    margin-top: 100px // Adjust the top margin to center vertically
+    margin-bottom: 100px // Add margin at the bottom to create space for the footer
+    text-align: center
+
+.signup-box
+    text-align: center
+
+.signup-box h2
+    margin-top: 0
+
+.signup-box form label
+    display: block
+    margin-bottom: 5px
+
+.signup-box form input[type="text"],
+.signup-box form input[type="email"],
+.signup-box form input[type="password"],
+.signup-box form input[type="submit"]
+    width: 100%
+    padding: 10px
+    margin-bottom: 15px
+    border: 1px solid $secondary-color // Use secondary color for border
+    border-radius: 4px
+    box-sizing: border-box
+    color: $secondary-color // Use secondary color for text color
+
+.signup-box form input[type="submit"]
+    background-color: $secondary-color
+    color: #fff // White text color
+    cursor: pointer
+    transition: background-color 0.3s
+
+.signup-box form input[type="submit"]:hover
+    background-color: $dark-background
+    border-color: $dark-background
+
+.link
+    margin-top: 15px
+    color: initial
+    text-decoration: none
+
+.link:hover
+    margin-top: 15px
+    color: $secondary-color
+
+// Focus style for input fields
+.signup-box form input[type="text"]:focus,
+.signup-box form input[type="email"]:focus,
+.signup-box form input[type="password"]:focus
+    border-color: $dark-background
+    outline: none // Remove default outline
+    box-shadow: 0 0 2px $dark-background // Add thin shadow instead of outline
+// Login Page Styles
+.login-container
+    width: 400px
+    padding: 20px
+    background-color: rgba(255, 255, 255, 0.8) // White background with opacity
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1) // Shadow effect
+    margin: 0 auto // Center the container horizontally
+    margin-top: 100px // Adjust the top margin to center vertically
+    margin-bottom: 100px // Add margin at the bottom to create space for the footer
+    text-align: center
+
+.login-box
+    text-align: center
+
+.login-box h2
+    margin-top: 0
+
+.login-box form label
+    display: block
+    margin-bottom: 5px
+
+.login-box form input[type="text"],
+.login-box form input[type="password"],
+.login-box form input[type="submit"]
+    width: 100%
+    padding: 10px
+    margin-bottom: 15px
+    border: 1px solid $secondary-color // Use secondary color for border
+    border-radius: 4px
+    box-sizing: border-box
+    color: $secondary-color // Use secondary color for text color
+
+.login-box form input[type="submit"]
+    background-color: $secondary-color
+    color: #fff // White text color
+    cursor: pointer
+    transition: background-color 0.3s
+
+.login-box form input[type="submit"]:hover
+    background-color: $dark-background
+    border-color: $dark-background
+
+// Focus style for input fields
+.login-box form input[type="text"]:focus,
+.login-box form input[type="password"]:focus
+    border-color: $dark-background
+    outline: none 
+    box-shadow: 0 0 2px $dark-background
