@@ -171,7 +171,7 @@ exports.mcqAttend = async (req, res, next) => {
       return res.status(404).send('MCQ Test not found');
     }
     const username = req.session.username;
-    res.render('mcq_attend', { mcqTest, username, layout: '../views/layouts/mcq'});
+    res.render('mcq_attend', { mcqTest, username, layout: '../views/layouts/other'});
   } catch (error) {
     console.error('Error fetching MCQ test:', error);
     res.status(500).send('Internal server error');

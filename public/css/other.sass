@@ -1,0 +1,32 @@
+// Variables
+$primary-color: #81d4f4  // Cerulean Blue
+$background-color: #ecf0f1  // Light Gray
+$text-color: #2c3e50  // Dark Blue
+$dark-background: #34495e  // Dark Blue Gray
+$secondary-color: #0288d1  // Pacific Blue
+
+$text-size: 16px // Default text size
+$line-height: 1.6 // Default line height
+
+// Global Styles
+html
+    position: relative
+    min-height: 100%
+    box-sizing: border-box // Add box-sizing property to the html element
+
+body
+    font-family: 'Roboto', sans-serif
+    margin: 0
+    padding-bottom: 100px
+    background-image: linear-gradient(to bottom, $background-color, $primary-color) // Light Lemon to Sky Blue gradient
+    background-size: cover
+    color: #000 // Black text color for better readability
+    overflow-x: hidden // Prevent horizontal scrolling
+    box-sizing: inherit // Inherit box-sizing property from the html element
+
+    // Add padding to the bottom of the body to prevent content from being obscured by the fixed footer
+    padding-bottom: 100px
+
+    // Apply box-sizing to all elements within the body
+    * 
+        box-sizing: border-box

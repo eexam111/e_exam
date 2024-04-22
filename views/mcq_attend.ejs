@@ -1,6 +1,6 @@
 
 <div class="container">
-    <h2>MCQ Test</h2>
+    <h2 class="mcq-heading">MCQ Test</h2>
     <form id="mcqForm" action="/mcqattend/<%= mcqTest._id %>/submit" method="POST" class="mcq-form">
       <% mcqTest.questions.forEach((question, index) => { %>
           <div class="question">
@@ -24,7 +24,7 @@
 
 <script>
     var countdownEl = document.getElementById('countdown');
-    var timeLeft = 10; 
+    var timeLeft = 600; 
   
     function updateCountdown() {
         var minutes = Math.floor(timeLeft / 60);
