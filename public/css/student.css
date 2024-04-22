@@ -417,4 +417,76 @@ button[type=submit]:hover {
   background-color: #e0e0e0;
 }
 
+.request {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ecf0f1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.request label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #2c3e50;
+  text-align: center;
+}
+.request #question {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #34495e;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-family: "Arial", sans-serif;
+  color: #2c3e50;
+}
+.request button[type=submit] {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #0288d1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.request button[type=submit]:hover {
+  background-color: #34495e;
+}
+
+#displayBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.response-container {
+  width: calc(50% - 20px);
+  max-width: 300px;
+  margin: 20px auto;
+  border: 2px solid #34495e;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+.response-container h2 {
+  margin-bottom: 10px;
+  color: #34495e;
+}
+.response-container div {
+  color: #2c3e50;
+}
+
+.request-status {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
 /*# sourceMappingURL=student.css.map */

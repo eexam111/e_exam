@@ -385,3 +385,80 @@ button[type="submit"]:hover
 
     &:hover
         background-color: #e0e0e0
+//Guideline
+// Styles for the request form container
+.request
+    max-width: 600px
+    margin: 0 auto
+    padding: 20px
+    border-radius: 10px
+    background-color: $background-color
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+
+    // Styles for the question label
+    label
+        display: block
+        font-weight: bold
+        margin-bottom: 5px
+        color: $text-color
+        text-align: center
+
+    // Styles for the question textarea
+    #question
+        width: 100%
+        padding: 10px
+        margin-bottom: 15px
+        border: 1px solid $dark-background
+        border-radius: 5px
+        box-sizing: border-box
+        background-color: #fff
+        font-family: 'Arial', sans-serif
+        color: $text-color
+
+    // Styles for the submit button
+    button[type="submit"]
+        display: block  // Make the button a block-level element
+        margin: 0 auto  // Center the button horizontally
+        padding: 10px 20px
+        background-color: $secondary-color
+        color: #fff
+        border: none
+        border-radius: 5px
+        cursor: pointer
+        transition: background-color 0.3s
+
+        &:hover
+            background-color: $dark-background 
+
+#displayBox
+    display: flex
+    flex-wrap: wrap  // Allow response containers to wrap to the next line if necessary
+
+.response-container
+    width: calc(50% - 20px)  // Set the width of each response container
+    max-width: 300px
+    margin: 20px auto
+    border: 2px solid $dark-background
+    padding: 15px
+    border-radius: 10px
+    background-color: #f0f0f0
+
+    // Styles for the headings inside the response container
+    h2
+        margin-bottom: 10px
+        color: $dark-background
+
+    // Styles for the content inside the response container
+    div
+        color: $text-color
+
+
+.request-status
+    background-color: #fff
+    padding: 20px
+    border-radius: 10px
+    max-width: 800px
+    margin: 20px auto  // Center the box horizontally and add margin top and bottom
+    text-align: center  // Center align text
+
+ 

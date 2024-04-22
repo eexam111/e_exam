@@ -1,24 +1,42 @@
-<!-- HTML form -->
+<div class="section">
+    <div class="message">
+        <h1>Request Admin</h1>
+    </div>
+</div>
+
+<div class="request">
 <form action="/send_request" method="POST">
     <label for="question">Ask your question:</label><br>
     <textarea id="question" name="question" rows="4" cols="50"></textarea><br>
     <button type="submit">Send Request</button>
 </form>
-
+</div>
+<div class="section">
+        <h1>Request Status</h1>
+</div>
 <!-- Display box for admin response and status -->
 <div id="displayBox">
-    <% requests.forEach(request => { %>
-        <div class="response-container">
-            <h2>Question:</h2>
-            <div><%= request.question %></div>
-            <h2>Admin Response:</h2>
-            <div><%= request.adminResponse %></div>
-            <h2>Status:</h2>
-            <div><%= request.status %></div>
+    <% if (requests.length > 0) { %>
+        <% requests.forEach(request => { %>
+            <div class="response-container">
+                <h2>Question:</h2>
+                <div><%= request.question %></div>
+                
+                <% if (request.adminResponse) { %>
+                    <h2>Admin Response:</h2>
+                    <div><%= request.adminResponse %></div>
+                <% } else { %>
+                    <h2>Admin Response:</h2>
+                    <div>No admin response</div>
+                <% } %>
+                
+                <h2>Status:</h2>
+                <div><%= request.status %></div>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <div class="request-status">
+            <p>No requests yet.</p>
         </div>
-    <% }) %>
+    <% } %>
 </div>
-
-
-
-
