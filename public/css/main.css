@@ -151,7 +151,6 @@ body * {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 40px 0;
 }
 
 .review-slider {
@@ -190,25 +189,6 @@ body * {
   margin-bottom: 10px;
 }
 
-.animated {
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
-
-.fadeIn {
-  animation-name: fadeIn;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .signup-container {
   width: 400px;
   padding: 20px;
@@ -330,6 +310,61 @@ body * {
   border-color: #34495e;
   outline: none;
   box-shadow: 0 0 2px #34495e;
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: justify;
+}
+
+.about-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #34495e;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.about-section img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.about-section img:hover {
+  transform: scale(1.1);
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

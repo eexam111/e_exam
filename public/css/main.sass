@@ -3,7 +3,11 @@ $primary-color: #81d4f4  // Cerulean Blue
 $background-color: #ecf0f1  // Light Gray
 $text-color: #2c3e50  // Dark Blue
 $dark-background: #34495e  // Dark Blue Gray
-$secondary-color: #0288d1 // Pacific blue
+$secondary-color: #0288d1  // Pacific Blue
+
+$text-size: 16px // Default text size
+$line-height: 1.6 // Default line height
+
 // Global Styles
 html
     position: relative
@@ -26,6 +30,7 @@ body
     // Apply box-sizing to all elements within the body
     * 
         box-sizing: border-box
+
 // Header Styles
 .header
   background-color: $dark-background
@@ -147,7 +152,6 @@ body
     flex-direction: column
     align-items: center 
     text-align: center 
-    padding: 40px 0
 
 .review-slider
     display: flex
@@ -180,21 +184,6 @@ body
     border-radius: 50%
     margin-bottom: 10px
 
-// Animation
-.animated
-    animation-duration: 1s
-    animation-fill-mode: both
-
-.fadeIn
-    animation-name: fadeIn
-
-@keyframes fadeIn
-    0%
-        opacity: 0
-        transform: translateY(50px)
-    100%
-        opacity: 1
-        transform: translateY(0)
 // Signup Page Styles
 .signup-container
     width: 400px
@@ -254,6 +243,7 @@ body
     border-color: $dark-background
     outline: none // Remove default outline
     box-shadow: 0 0 2px $dark-background // Add thin shadow instead of outline
+
 // Login Page Styles
 .login-container
     width: 400px
@@ -302,3 +292,50 @@ body
     border-color: $dark-background
     outline: none 
     box-shadow: 0 0 2px $dark-background
+
+// About Page Styles
+.about-section
+    max-width: 800px
+    margin: 0 auto
+    padding: 20px
+    text-align: justify
+
+.about-title
+    font-size: 24px
+    font-weight: bold
+    margin-bottom: 20px
+    text-align: center
+    color: $dark-background 
+
+.about-text
+    font-size: $text-size // Set font size using the variable
+    line-height: $line-height // Set line height using the variable
+    margin-bottom: 15px
+    color: $dark-background
+
+.about-section img
+    display: block
+    margin: 0 auto
+    max-width: 100%
+    height: auto
+    margin-bottom: 20px
+    transition: transform 0.3s ease // Add transition for smooth hover effect
+
+.about-section img:hover
+    transform: scale(1.1) 
+
+// Animation
+.animated
+    animation-duration: 1s
+    animation-fill-mode: both
+
+.fadeIn
+    animation-name: fadeIn
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+        transform: translateY(50px)
+    100%
+        opacity: 1
+        transform: translateY(0)
