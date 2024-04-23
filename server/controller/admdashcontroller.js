@@ -204,15 +204,25 @@ exports.acceptRequest = async (req, res) => {
   try {
     const { requestId } = req.params;
     const request = await Request.findByIdAndUpdate(requestId, { status: 'accepted' });
-    res.render('admin_response', { 
+    const { userName, question } = request;
+
+    const locals = {
+      title: "Admin Guide - E-Exam",
+      description: "Exam Arrangement System",
       request,
-      layout: '../views/layouts/admin_dashboard' 
-    });
+      user: userName,
+      ques: question,
+      layout: '../views/layouts/admin_dashboard'
+    };
+
+    res.render('admin_response', locals);
   } catch (error) {
     console.error('Error accepting request:', error);
     res.status(500).send('Internal server error');
   }
 };
+
+
 
 exports.sendResponse = async (req, res) => {
   try {
@@ -246,7 +256,15 @@ exports.showAdminResponseForm = async (req, res) => {
   try {
     const requestId = req.params.requestId;
     const request = await Request.findById(requestId);
-    res.render('admin_response_form', { request });
+    const { userName, question } = request;
+    const locals = {
+      title: "Admin Guide - E-Exam",
+      description: "Exam Arrangement System",
+      requests: request,
+      user: userName,
+      ques: question
+    };
+    res.render('admin_response_form', locals);
   } catch (error) {
     console.error('Error rendering admin response form:', error);
     res.status(500).send('Internal server error');

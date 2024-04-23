@@ -171,6 +171,136 @@ body
 .notice-board + .schedule
     margin-top: 20px
 
+//Admin Option
+.admin-options-container
+    padding: 20px
+    border-radius: 10px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+    background-color: white
+    width: 60%
+    flex-direction: column
+    justify-content: center  // Center the container vertically
+    align-items: center  // Center the container horizontally
+    text-align: center
+    margin: 0 auto 
+    margin-top: 50px
+
+    h1
+        margin-bottom: 30px
+
+    div
+        ul
+            list-style-type: none
+            padding: 0
+
+        li
+            margin-bottom: 10px
+            transition: transform 0.3s ease
+
+            a
+                display: block
+                padding: 10px
+                text-decoration: none
+                background-color: $very-light-blue
+                color: $secondary-color
+                border: 1px solid $secondary-color
+                border-radius: 5px
+                text-align: center
+                transition: background-color 0.3s, color 0.3s
+
+                &:hover
+                    background-color: $dark-background
+                    color: white
+                    transform: scale(1.05)
+//Create MCQ
+.mcq-form-container
+    padding: 20px
+    border-radius: 10px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+    background-color: white
+    width: 60%
+    flex-direction: column
+    justify-content: center  // Center the container vertically
+    align-items: center  // Center the container horizontally
+    text-align: center
+    margin: 0 auto 
+    margin-top: 50px
+
+    form
+        label
+            display: block
+            margin-bottom: 5px
+
+        input[type="text"],
+        textarea,
+        select
+            width: 100%
+            padding: 10px
+            margin-bottom: 10px
+            border: 1px solid #ccc
+            border-radius: 5px
+
+        input[type="submit"]
+            padding: 10px 20px
+            background-color: $secondary-color
+            color: white
+            border: none
+            border-radius: 5px
+            cursor: pointer
+            transition: background-color 0.3s
+
+            &:hover
+                background-color: $dark-background
+
+    select
+        width: 100%
+        padding: 10px
+        margin-bottom: 10px
+        border: 1px solid #ccc
+        border-radius: 5px
+        background-color: white  // Background color of the select
+        appearance: none  // Removes default arrow icon
+        -webkit-appearance: none
+        -moz-appearance: none
+        cursor: pointer
+
+        &::after
+            content: '\25BC'  // Unicode character for down arrow
+            position: absolute
+            top: 50%
+            right: 10px
+            transform: translateY(-50%)
+            pointer-events: none
+
+    option
+        padding: 10px
+        width: 100%  // Adjusted width
+        background-color: $very-light-blue  
+        color: #333 
+        border: none  
+        border-radius: 20px
+        cursor: pointer
+        transition: width 0.3s, font-size 0.3s 
+        width: 110% 
+        font-size: 16px 
+
+        &:checked
+            background-color: $dark-background  // Background color of selected option
+            color: white  // Text color of selected option
+        &:hover
+            width: 110%
+            font-size: 16px
+
+    .question
+        margin-bottom: 20px
+        transition: 0.3s 
+        background-color: $very-light-blue
+        padding: 15px
+        border-radius: 10px
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+
+//Result 
+
 //Admin Guideline
 .admin-guide
     max-width: 800px
@@ -185,6 +315,8 @@ body
     ul
         list-style: none
         padding: 0
+    p
+        text-align: center
 
     .request-box
         border: 1px solid #ccc
@@ -246,3 +378,56 @@ body
                         background-color: $dark-background
                         color: white
 //Admin Response
+#admin-response-container
+    background-color: white
+    padding: 20px
+    border-radius: 10px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+    flex-direction: column
+    justify-content: center  // Center the container vertically
+    align-items: center  // Center the container horizontally
+    width: 50%  // Adjust the width as needed
+    text-align: center
+    margin: 0 auto 
+    margin-top: 50px
+
+    h1
+        margin-bottom: 20px
+
+    .user-info
+        margin-bottom: 20px
+        background-color: $very-light-blue  // Set the background color of the question box to very light blue
+        padding: 10px
+        border-radius: 5px
+        text-align: left
+        p
+            margin: 10px 0
+
+
+    .response-form
+        form
+            margin-top: 20px
+
+            label
+                display: block
+                margin-bottom: 10px
+
+            input[type="text"]
+                width: 100%
+                padding: 10px
+                margin-bottom: 10px
+                border: 1px solid $dark-background
+                border-radius: 5px
+                transition: 0.3s
+
+            button[type="submit"]
+                padding: 10px 20px
+                background-color: $secondary-color
+                color: white
+                border: none
+                border-radius: 5px
+                cursor: pointer
+                transition: background-color 0.3s
+
+                &:hover
+                    background-color: $dark-background

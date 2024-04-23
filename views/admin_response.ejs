@@ -1,7 +1,16 @@
-<h1>Admin Response</h1>
-    <form action="/admin_guide/<%= request._id %>/reply" method="POST">
-        <label for="adminResponse">Admin Response:</label>
-        <input type="text" id="adminResponse" name="adminResponse">
-        <button type="submit">Send Response</button>
-    </form>
-   
+<div id="admin-response-container">
+    <h1>Response Request</h1>
+    
+    <div class="user-info">
+        <p><strong>Username:</strong> <span id="username"><%= user %></span></p>
+        <p><strong>Question:</strong> <span id="question"><%= ques %></span></p>
+    </div>
+
+    <div class="response-form">
+        <form action="/admin_guide/<%= request._id %>/reply" method="POST">
+            <label for="adminResponse">Response:</label>
+            <input type="text" id="adminResponse" name="adminResponse">
+            <button type="submit">Send Response</button>
+        </form>
+    </div>
+</div>
