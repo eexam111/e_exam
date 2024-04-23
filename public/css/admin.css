@@ -175,6 +175,56 @@ body * {
   margin-top: 20px;
 }
 
+.schedule-page form {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.schedule-page label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.schedule-page input[type=text],
+.schedule-page textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  font-family: "Arial", sans-serif;
+}
+.schedule-page input[type=submit] {
+  padding: 10px 20px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.schedule-page input[type=submit]:hover {
+  background-color: #34495e;
+}
+.schedule-page #deleteScheduleBtn {
+  padding: 10px 20px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.schedule-page #deleteScheduleBtn:hover {
+  background-color: #34495e;
+}
+
 .admin-options-container {
   padding: 20px;
   border-radius: 10px;
