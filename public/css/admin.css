@@ -175,6 +175,47 @@ body * {
   margin-top: 20px;
 }
 
+.admin-notice-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.admin-notice-container h1 {
+  margin-bottom: 20px;
+}
+.admin-notice-container form label {
+  display: block;
+  margin-bottom: 5px;
+}
+.admin-notice-container form input[type=text],
+.admin-notice-container form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.admin-notice-container form .notice-submit-btn {
+  padding: 10px 20px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.admin-notice-container form .notice-submit-btn:hover {
+  background-color: #34495e;
+}
+
 .schedule-page form {
   max-width: 600px;
   margin: 50px auto;

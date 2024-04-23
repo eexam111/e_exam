@@ -171,6 +171,48 @@ body
 .notice-board + .schedule
     margin-top: 20px
 
+//Admin Notice
+.admin-notice-container
+    background-color: white
+    padding: 20px
+    border-radius: 10px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+    text-align: center
+    flex-direction: column
+    justify-content: center  // Center the container vertically
+    align-items: center  // Center the container horizontally
+    width: 60%
+    margin: 0 auto 
+    margin-top: 40px
+
+    h1
+        margin-bottom: 20px
+
+    form
+        label
+            display: block
+            margin-bottom: 5px
+
+        input[type="text"],
+        textarea
+            width: 100%
+            padding: 10px
+            margin-bottom: 10px
+            border: 1px solid #ccc
+            border-radius: 5px
+
+        .notice-submit-btn
+            padding: 10px 20px
+            background-color: $secondary-color
+            color: white
+            border: none
+            border-radius: 5px
+            cursor: pointer
+            transition: background-color 0.3s
+
+            &:hover
+                background-color: $dark-background
+
 //Admin Schedule 
 .schedule-page
     form
@@ -221,7 +263,7 @@ body
 
         &:hover
             background-color: $dark-background
-            
+
 //Admin Option
 .admin-options-container
     padding: 20px
