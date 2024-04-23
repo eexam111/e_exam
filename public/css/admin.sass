@@ -4,7 +4,7 @@ $background-color: #ecf0f1  // Light Gray
 $text-color: #2c3e50  // Dark Blue
 $dark-background: #34495e  // Dark Blue Gray
 $secondary-color: #0288d1  // Pacific Blue
-
+$very-light-blue: #f0f8ff
 $text-size: 16px // Default text size
 $line-height: 1.6 // Default line height
 
@@ -125,3 +125,123 @@ body
 
 .footer p a:hover
     color: $primary-color
+
+//Admin Dashboard 
+.notice-board,
+.schedule
+    margin-bottom: 40px
+    padding: 20px
+    border-radius: 10px
+    background-color: rgba(255, 255, 255, 0.8)
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+    text-align: center // Center align the content
+    max-width: 800px
+    margin: 0 auto // Center the sections horizontally
+
+.notice-board h2,
+.schedule h2
+    font-size: 24px
+    margin-bottom: 10px
+    margin-top: 30px
+    text-align: center // Center align the header text
+
+.notice-board p,
+.schedule p
+    margin: 0
+    text-align: left 
+
+.notice-board .notice-item
+    margin-bottom: 20px
+
+.notice-board
+    margin-top: 30px
+
+.schedule-items
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    gap: 20px
+    text-align: left
+
+.schedule-item
+    padding: 15px
+    border: 1px solid #ccc
+    border-radius: 5px
+    background-color: #f9f9f9
+// Add space between sections
+.notice-board + .schedule
+    margin-top: 20px
+
+//Admin Guideline
+.admin-guide
+    max-width: 800px
+    margin: 0 auto
+    padding: 20px
+
+    h1
+        text-align: center
+        font-size: 24px
+        margin-bottom: 20px
+
+    ul
+        list-style: none
+        padding: 0
+
+    .request-box
+        border: 1px solid #ccc
+        border-radius: 10px
+        padding: 15px
+        margin-bottom: 20px
+        background-color: white
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+        transition: box-shadow 0.3s ease
+        position: relative
+
+        &:hover
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15)
+
+        .request-info
+            margin-bottom: 10px
+            position: relative
+            z-index: 1
+            background-color: $very-light-blue
+            border-radius: 5px
+            padding: 10px
+
+            strong
+                font-weight: bold
+
+            &:before
+                content: ''
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                background-color: rgba(255, 255, 255, 0.8)
+                border-radius: 10px
+                z-index: -1
+
+        .action-buttons
+            display: flex
+
+            form
+                margin-right: 10px
+
+                button
+                    padding: 5px 10px
+                    border: none
+                    border-radius: 3px
+                    cursor: pointer
+                    transition: background-color 0.3s, color 0.3s
+
+                    &:first-child
+                        background-color: $primary-color
+                        color: white
+
+                    &:last-child
+                        background-color: $secondary-color
+                        color: white
+
+                    &:hover
+                        background-color: $dark-background
+                        color: white
