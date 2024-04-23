@@ -45,7 +45,7 @@ app.use('/', require('./server/routes/studash'));
 app.use('/', require('./server/routes/admdash'))
 // Handle 404
 app.get('*', function(req, res) {
-  res.status(404).render('error/404');
+  res.status(404).render('error/404', { layout:'../views/layouts/other' });
 });
 
 server.listen(port, () => {
