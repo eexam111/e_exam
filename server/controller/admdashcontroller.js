@@ -80,7 +80,8 @@ exports.admresult = async (req, res) => {
       const locals = {
           title: "Admin Dashboard - E-Exam",
           description: "Exam Arrangement System",
-          results: allResults
+          results: allResults,
+          layout: '../views/layouts/admin_dashboard'
       };
       res.render('result', locals); 
   } catch (error) {
@@ -222,8 +223,6 @@ exports.acceptRequest = async (req, res) => {
   }
 };
 
-
-
 exports.sendResponse = async (req, res) => {
   try {
     const { requestId } = req.params;
@@ -238,8 +237,6 @@ exports.sendResponse = async (req, res) => {
     res.status(500).send('Internal server error');
   }
 };
-
-
 
 exports.rejectRequest = async (req, res) => {
   try {
@@ -270,8 +267,7 @@ exports.showAdminResponseForm = async (req, res) => {
     res.status(500).send('Internal server error');
   }
 };
-
-    /**
+/**
  * GET /
  * Logout
 */

@@ -303,6 +303,55 @@ body * {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.result {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 40px;
+  text-align: center;
+}
+.result h2 {
+  margin-bottom: 20px;
+}
+.result table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.result table th, .result table td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+.result table th:first-child, .result table td:first-child {
+  border-left: 1px solid #ccc;
+}
+.result table th:last-child, .result table td:last-child {
+  border-right: 1px solid #ccc;
+}
+.result table th:hover, .result table td:hover {
+  background-color: #f5f5f5;
+}
+
+form button[type=submit] {
+  display: block;
+  padding: 10px 20px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+form button[type=submit]:hover {
+  background-color: #34495e;
+}
+
 .admin-guide {
   max-width: 800px;
   margin: 0 auto;
